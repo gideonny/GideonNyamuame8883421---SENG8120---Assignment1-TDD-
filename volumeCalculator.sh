@@ -10,5 +10,6 @@ calculate_volume() {
         echo "Error: Dimensions must be positive numbers."
         return 1
     fi
+    
     echo $(( $1 * $2 * $3 ))
 }

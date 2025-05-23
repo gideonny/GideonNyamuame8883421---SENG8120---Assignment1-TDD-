@@ -28,10 +28,10 @@ testNegativeNumbers() {
     [[ "$result" == "Error: Dimensions must be positive numbers." ]] && pass "Negative input throws error" || fail "Negative input test failed"
 }
 
-#testForZero() {
- # result=$(calculate_volume 0 2 3)
-  #[[ "$result" == "Error: Dimensions must be positive numbers." ]] && pass "Zero input throws error" || fail "Zero input test failed"
-#}
+testForZero() {
+    result=$(calculate_volume 0 2 3)
+    [[ "$result" == "Error: Dimensions must be positive numbers." ]] && pass "Zero input throws error" || fail "Zero input test failed"
+}
 
 #testLargeNumbers() {
  # result=$(calculate_volume 100000 100000 100000)
