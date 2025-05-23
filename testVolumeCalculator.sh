@@ -35,6 +35,13 @@ testForZero() {
     [[ "$result" == "$expected" ]] && pass "Zero input throws error" || fail "Zero input test failed"
 }
 
+testEmptyInput() {
+    result=$(calculate_volume "" 2 3)
+    expected="Error: At least one dimension is empty."
+     [[ "$result" == "$expected" ]] && pass "Empty input (length) throws error" || fail "Expected error for empty input but got '$result'"
+
+}
+
 #testLargeNumbers() {
  # result=$(calculate_volume 100000 100000 100000)
   #expected="1000000000000000"
@@ -51,6 +58,7 @@ testForZero() {
 testCalculateVolumeRectangularPrism
 testNegativeNumbers
 testForZero
+testEmptyInput
 #testLargeNumbers
 #testDecimalNumbers
 
