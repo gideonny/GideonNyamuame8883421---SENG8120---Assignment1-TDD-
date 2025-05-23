@@ -23,10 +23,10 @@ testCalculateVolumeRectangularPrism() {
   [[ "$result" == "$expected" ]] && pass "2*3*4 = 24" || fail "Expected 24 but got $result"
 }
 
-#testNegativeNumbers() {
- # result=$(calculate_volume -1 2 3)
- # [[ "$result" == "Error: Dimensions must be positive numbers." ]] && pass "Negative input throws error" || fail "Negative input test failed"
-#}
+testNegativeNumbers() {
+    result=$(calculate_volume -1 2 3)
+    [[ "$result" == "Error: Dimensions must be positive numbers." ]] && pass "Negative input throws error" || fail "Negative input test failed"
+}
 
 #testForZero() {
  # result=$(calculate_volume 0 2 3)
@@ -47,7 +47,7 @@ testCalculateVolumeRectangularPrism() {
 
 # Run tests
 testCalculateVolumeRectangularPrism
-#testNegativeNumbers
+testNegativeNumbers
 #testForZero
 #testLargeNumbers
 #testDecimalNumbers
