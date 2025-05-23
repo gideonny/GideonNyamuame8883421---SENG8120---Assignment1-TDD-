@@ -48,7 +48,7 @@ testForZero() {
 # Run tests
 testCalculateVolumeRectangularPrism
 testNegativeNumbers
-#testForZero
+testForZero
 #testLargeNumbers
 #testDecimalNumbers
 
