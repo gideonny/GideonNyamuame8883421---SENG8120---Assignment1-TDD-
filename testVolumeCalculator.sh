@@ -25,12 +25,14 @@ testCalculateVolumeRectangularPrism() {
 
 testNegativeNumbers() {
     result=$(calculate_volume -1 2 3)
-    [[ "$result" == "Error: Dimensions must be positive numbers." ]] && pass "Negative input throws error" || fail "Negative input test failed"
+    expected="Error: Dimensions must be positive numbers."
+    [[ "$result" == "$expected" ]] && pass "Negative input throws error" || fail "Negative input test failed"
 }
 
 testForZero() {
     result=$(calculate_volume 0 2 3)
-    [[ "$result" == "Error: Dimensions must be positive numbers." ]] && pass "Zero input throws error" || fail "Zero input test failed"
+    expected="Error: At least one dimension is zero. Shape is no longer a 3D shape therefore volume is zero."
+    [[ "$result" == "$expected" ]] && pass "Zero input throws error" || fail "Zero input test failed"
 }
 
 #testLargeNumbers() {
