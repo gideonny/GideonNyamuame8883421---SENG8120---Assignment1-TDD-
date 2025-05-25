@@ -48,26 +48,12 @@ testStringValues() {
     [[ "$result" == "$expected" ]] && pass "String input (length) throws error" || fail "Expected error for string input but got '$result'"
 }
 
-#testLargeNumbers() {
- # result=$(calculate_volume 100000 100000 100000)
-  #expected="1000000000000000"
-  #[[ "$result" == "$expected" ]] && pass "Large number test" || fail "Expected $expected but got $result"
-#}
-
-#testDecimalNumbers() {
- # result=$(calculate_volume 2.5 3.0 4.0)
-  #expected="30.0"
-  #[[ "$(printf "%.1f" "$result")" == "$expected" ]] && pass "Decimal test passed" || fail "Expected $expected but got $result"
-#}
-
 # Run tests
 testCalculateVolumeRectangularPrism
 testNegativeNumbers
 testForZero
 testEmptyInput
 testStringValues
-#testLargeNumbers
-#testDecimalNumbers
 
 echo
 echo "✅ Passed: $pass_count"
