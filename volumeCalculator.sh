@@ -12,6 +12,12 @@ calculate_volume() {
         return 1
     fi
 
+    # Check if inputs are valid integers
+    if ! [[ "$length" =~ ^[+-]?[0-9]+$ ]] || ! [[ "$width" =~ ^[+-]?[0-9]+$ ]] || ! [[ "$height" =~ ^[+-]?[0-9]+$ ]]; then
+        echo "Error: Dimensions must be positive numbers."
+        return 1
+    fi
+
     #check if inputs are negative
     if ((length < 0 || width < 0 || height < 0)); then
         echo "Error: Dimensions must be positive numbers."

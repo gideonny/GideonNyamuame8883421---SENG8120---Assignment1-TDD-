@@ -42,6 +42,12 @@ testEmptyInput() {
 
 }
 
+testStringValues() {
+    expected="Error: Dimensions must be positive numbers."
+    result=$(calculate_volume "abc" 2 3)
+    [[ "$result" == "$expected" ]] && pass "String input (length) throws error" || fail "Expected error for string input but got '$result'"
+}
+
 #testLargeNumbers() {
  # result=$(calculate_volume 100000 100000 100000)
   #expected="1000000000000000"
@@ -59,6 +65,7 @@ testCalculateVolumeRectangularPrism
 testNegativeNumbers
 testForZero
 testEmptyInput
+testStringValues
 #testLargeNumbers
 #testDecimalNumbers
 
